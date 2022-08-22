@@ -2,6 +2,15 @@
 include_once 'header.php'
  ?>
 
+<section>
+  <?php
+      if(isset($_SESSION["useruid"])){
+        echo "<p>
+        Hello" . $_SESSION["useruid"] .
+        "</p>";
+      }
+   ?>
+</section>
 
 
  <?php
