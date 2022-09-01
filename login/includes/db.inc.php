@@ -1,7 +1,7 @@
 <?php
 
 $serverName = "localhost";
-$dBUsername = "root";
+$dBUsername = "";
 $dbPassword = "";
 $dbName = "loginproj";
 
