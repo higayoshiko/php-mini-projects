@@ -13,6 +13,31 @@ class SignupContr {
       $this->email = $email;
   }
 
+  private function signupUser(){
+    if($this.emptyInput() == false){
+      header("location: ../index.php?error=emptyinput");
+      exit();
+    }
+    if($this.invalidUid() == false){
+      header("location: ../index.php?error=invalidusername");
+      exit();
+    }
+    if($this.invalidEmail() == false){
+      header("location: ../index.php?error=invalidemail");
+      exit();
+    }
+    if($this.pwdMatch() == false){
+      header("location: ../index.php?error=passwordmatch");
+      exit();
+    }
+    if($this.uidTakenCheck() == false){
+      header("location: ../index.php?error=uidtaken");
+      exit();
+    }
+
+    $this->setUser();
+  }
+
   private function emptyInput(){
     $result;
     if(empty($this->uid || $this->pwd || $this->pwdrepeat || $this->email)) {
@@ -53,4 +78,13 @@ class SignupContr {
       return $result;
     }
 
+    private function uidTakenCheck() {
+      $result;
+      if($this->checkUser($this->uid, $this->$email)){
+        $result = false;
+      } else {
+        $result = true;
+      }
+      return $result;
+    }
   }
