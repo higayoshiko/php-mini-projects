@@ -5,6 +5,26 @@
     <title></title>
   </head>
   <body>
+<header>
+  <ul>
+    <?php
+    if(isset($_SESSION["userid"])){
+     ?>
+    <li><a href="#"></a>
+      <?php echo $_SESSION["useruid"]; ?>
+    </li>
+    <li><a href="includes/logout.inc.php"></a>logout</li>
+    <?php
+  } else {
+    ?>
+    <li><a href="#"></a>sign up</li>
+    <li><a href="#"></a>login</li>
+    <?php
+    }
+    ?>
+  </ul>
+</header>
+
 <section class="index">
   <div class="container-signup">
     <form class="" action="includes/signup.inc.php" method="post">
